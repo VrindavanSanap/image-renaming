@@ -3,6 +3,7 @@ import time
 import requests
 from dotenv import load_dotenv
 
+""
 load_dotenv()
 ACCOUNT_ID = os.getenv("ACCOUNT_ID")
 API_KEY = os.getenv("API_KEY")
