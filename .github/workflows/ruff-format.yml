@@ -14,19 +14,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout code
-      uses: actions/checkout@v2
+      run: git checkout -f
     - name: Set up Python
-      uses: actions/setup-python@v2
-      with:
-        python-version: '>=3.8'
+      run: |
+        python -m ensurepip
+        python -m pip install --upgrade pip
+        python -m pip install --upgrade virtualenv
+        virtualenv -p python3.8 venv
+        . venv/bin/activate
     - name: Install dependencies
       run: |
-        python -m pip install --upgrade pip
         pip install ruff
     - name: Format code
-      run: ruff format 
-    - name: Commit and push changes
-      uses: actions/checkout@v2
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        commit_message: Replaced foo with bar
+      run: |
+        ruff format
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+        git config --global user.name "github-actions[bot]"
+        git add .
+        git commit -m "Ruff format"
