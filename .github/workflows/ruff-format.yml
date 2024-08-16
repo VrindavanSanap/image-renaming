@@ -22,7 +22,7 @@ jobs:
 
     - name: Run Ruff
       run: |
-        ruff --fix .
+        ruff format 
     
     - name: Commit formatted code
       if: github.event_name == 'push'
