@@ -12,10 +12,6 @@ def sanitize_name(name):
   name = re.sub(r"[^a-zA-Z0-9\s]", "", name)
   name = re.sub(r"\s", "_", name)
 
-
-
-
-
   return name
 
 
