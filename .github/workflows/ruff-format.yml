@@ -26,7 +26,7 @@ jobs:
     - name: Format code
       run: ruff format 
     - name: Commit and push changes
-      uses: devops-infra/action-commit-push@master
+      uses: actions/checkout@v2
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         commit_message: Replaced foo with bar
