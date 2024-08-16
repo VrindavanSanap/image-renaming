@@ -20,14 +20,18 @@ jobs:
         with:
           python-version: '3.x'
 
-      - name: Install Ruff
+      - name: Install Ruff and isort
         run: |
           python -m pip install --upgrade pip
-          pip install ruff
+          pip install ruff isort
 
       - name: Run Ruff format
         run: |
           ruff format 
+
+      - name: Run isort
+        run: |
+          isort .
 
       - name: Configure Git
         run: |
@@ -37,7 +41,7 @@ jobs:
       - name: Commit changes
         run: |
           git add .
-          git commit -m 'Format code with Ruff' || echo "No changes to commit"
+          git commit -m 'Format code with Ruff and isort' || echo "No changes to commit"
 
       - name: Push changes
         run: |
