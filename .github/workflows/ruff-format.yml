@@ -27,7 +27,7 @@ jobs:
 
       - name: Run Ruff format
         run: |
-          ruff --fix .
+          ruff format 
 
       - name: Configure Git
         run: |
