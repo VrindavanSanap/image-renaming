@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # Created by Vrindavan Sanap
-# smart_rename_images.py 
+# smart_rename_images.py
 # This program lets people rename images in a particular folder
 # ALl rights reserved
 #
