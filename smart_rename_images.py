@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # Created by Vrindavan Sanap
-# smart_rename_images.py 
+# smart_rename_images.py
 # This program lets people rename images in a particular folder
 # ALl rights reserved
 #
@@ -15,6 +15,8 @@ from image_to_text import image_to_text
 from string_utilities import sanitize_name
 
 PROMPT = "Generate a short, descriptive title for this image, ideally no more than 5 words, as if written by an Apple copywriter."
+
+
 def smart_rename_image(img_loc, prompt=PROMPT):
   new_name = image_to_text(img_loc, prompt=PROMPT)
   file_extension = os.path.splitext(img_loc)[1]
@@ -30,6 +32,8 @@ def smart_rename_folder(folder_loc):
       smart_rename_image(img_loc)
     except Exception as e:
       print(f"Error getting file name for {img_loc}: {str(e)}")
+
+
 import sys
 
 if __name__ == "__main__":
