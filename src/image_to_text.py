@@ -1,3 +1,10 @@
+#!/usr/bin/env python3
+# Created by Vrindavan Sanap
+# image_to_text.py 
+# This program is wrapper for cloudflare workers AI in python
+# ALl rights reserved
+#
+
 import os
 import time
 
@@ -55,7 +62,3 @@ def image_to_text(image_path: str, prompt: str = "Get kawaii description for thi
   else:
     raise Exception("Image to text conversion failed: Description not found in the response.")
 
-
-if __name__ == "__main__":
-  print(image_to_text("./alpaca.jpg"))
-  print(image_to_text("./cat.jpg"))
