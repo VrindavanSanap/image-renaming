@@ -9,10 +9,9 @@ import glob
 import os
 import re
 
-from tqdm import tqdm
-
 from image_to_text import image_to_text
 from string_utilities import sanitize_name
+from tqdm import tqdm
 
 PROMPT = "Generate a short, descriptive title for this image, ideally no more than 5 words, as if written by an Apple copywriter."
 
