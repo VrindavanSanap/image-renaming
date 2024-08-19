@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # Created by Vrindavan Sanap
-# image_to_text.py 
+# image_to_text.py
 # This program is wrapper for cloudflare workers AI in python
 # ALl rights reserved
 #
@@ -61,4 +61,3 @@ def image_to_text(image_path: str, prompt: str = "Get kawaii description for thi
     return description  # Remove the first and last characters as per the original implementation
   else:
     raise Exception("Image to text conversion failed: Description not found in the response.")
-
